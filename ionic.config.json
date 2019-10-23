@@ -1,0 +1,7 @@
+{
+  "name": "portal-v2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

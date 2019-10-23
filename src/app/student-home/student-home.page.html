@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>
+      Student
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dark-grey">
+  <div class="ion-padding">
+  	<ion-grid>
+	    <ion-row>
+	    	<ion-col size="6">
+	    		<ion-card class="card-border" color="warning" text-center (click)="openWithSystemBrowser('http://beranang.kpm.edu.my')">
+	    			<ion-card-header class="card-header">
+					    <ion-card-title class="fsr-3">
+					    	<ion-icon name="paper"></ion-icon>
+					    </ion-card-title>
+					  </ion-card-header>
+		    		<ion-card-content class="pt-0 inline-content">
+				    Laman Web Rasmi KPMB
+				  </ion-card-content>
+				</ion-card>
+	    	</ion-col>
+	    	<ion-col size="6">
+	    		<ion-card class="card-border" color="success" text-center (click)="openWithSystemBrowser('http://kpmberanang.my/cms/')">
+	    			<ion-card-header class="card-header">
+					    <ion-card-title class="fsr-3">
+					    	<ion-icon name="speedometer"></ion-icon>
+					    </ion-card-title>
+					  </ion-card-header>
+		    		<ion-card-content class="pt-0 inline-content">
+				    CMS KPMB
+				  </ion-card-content>
+				</ion-card>
+	    	</ion-col>
+	    </ion-row>
+	    <ion-row>
+	    	<ion-col size="6">
+	    		<ion-card class="card-border" color="tertiary" text-center (click)="openWithSystemBrowser('http://myintervensi.kpmb.my/')">
+	    			<ion-card-header class="card-header">
+					    <ion-card-title class="fsr-3">
+					    	<ion-icon name="warning"></ion-icon>
+					    </ion-card-title>
+					  </ion-card-header>
+		    		<ion-card-content class="pt-0 inline-content">
+				    AIMS
+				  </ion-card-content>
+				</ion-card>
+	    	</ion-col>
+	    	<ion-col size="6">
+	    		<ion-card class="card-border" color="light" text-center (click)="openWithSystemBrowser('http://kpmberanang.my/sars/')">
+	    			<ion-card-header class="card-header">
+					    <ion-card-title class="fsr-3">
+					    	<ion-icon name="warning"></ion-icon>
+					    </ion-card-title>
+					  </ion-card-header>
+		    		<ion-card-content class="pt-0 inline-content">
+				    SARS
+				  </ion-card-content>
+				</ion-card>
+	    	</ion-col>
+	    </ion-row>
+  	</ion-grid>
+  </div>
+</ion-content>
