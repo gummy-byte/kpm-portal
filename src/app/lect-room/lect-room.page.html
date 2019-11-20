@@ -6,17 +6,18 @@
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
-	<ion-item *ngFor="let row of csvData;let i = index">
+	<ion-searchbar (ionChange)="onSearchTerm($event)" placeholder="Carian" showCancelButton="focus"></ion-searchbar>
+	<ion-item *ngFor="let row of lecturer;">
 	  <ion-label>
 	  	<div class="lect-name-room">
-		  	<ion-note class="capitalize" color="medium"><small><b><ion-icon class="va-text-top"name="home"></ion-icon>{{toTitleCase(csvData[i][2])}}</b></small></ion-note><br>
-		    <p class="word-break capitalize">{{toTitleCase(csvData[i][0])}}</p>
+		  	<ion-note class="capitalize" color="medium"><small><b><ion-icon class="va-text-top"name="home"></ion-icon>{{toTitleCase(row.room)}}</b></small></ion-note><br>
+		    <p class="word-break capitalize">{{toTitleCase(row.name)}}</p>
 	  	</div>
-      <ion-chip *ngIf="csvData[i][1] == 'KETUA JABATAN SAINS KUANTITATIF'" class="department-chip capitalize" color="danger">{{toTitleCase(csvData[i][1])}}</ion-chip>
-      <ion-chip *ngIf="csvData[i][1] == 'KETUA JABATAN PENGAJIAN AM'" class="department-chip capitalize" color="secondary">{{toTitleCase(csvData[i][1])}}</ion-chip>
-      <ion-chip *ngIf="csvData[i][1] == 'KETUA JABATAN PENGAJIAN PERNIAGAAN'" class="department-chip capitalize" color="tertiary">{{toTitleCase(csvData[i][1])}}</ion-chip>
-      <ion-chip *ngIf="csvData[i][1] == 'KETUA JABATAN PERAKAUNAN'" class="department-chip capitalize" color="success">{{toTitleCase(csvData[i][1])}}</ion-chip>
-      <ion-chip *ngIf="csvData[i][1] == 'KETUA JABATAN LANDSCAPE'" class="department-chip capitalize" color="warning">{{toTitleCase(csvData[i][1])}}</ion-chip>
+      <ion-chip *ngIf="row.course.includes('SAINS KUANTITATIF')" class="department-chip capitalize" color="danger">{{toTitleCase(row.course)}}</ion-chip>
+      <ion-chip *ngIf="row.course.includes('PENGAJIAN AM')" class="department-chip capitalize" color="secondary">{{toTitleCase(row.course)}}</ion-chip>
+      <ion-chip *ngIf="row.course.includes('PENGAJIAN PERNIAGAAN')" class="department-chip capitalize" color="tertiary">{{toTitleCase(row.course)}}</ion-chip>
+      <ion-chip *ngIf="row.course.includes('PERAKAUNAN')" class="department-chip capitalize" color="success">{{toTitleCase(row.course)}}</ion-chip>
+      <ion-chip *ngIf="row.course.includes('JABATAN LANDSCAPE')" class="department-chip capitalize" color="warning">{{toTitleCase(row.course)}}</ion-chip>
 	  </ion-label>
 	</ion-item>
 </ion-content>
