@@ -12,6 +12,10 @@ export class UserSwitchPage implements OnInit {
   		public navCtrl: NavController
   	) { }
 
+  exitApp(){
+  	navigator['app'].exitApp();
+  }
+  
   ngOnInit() {
   }
 }	
