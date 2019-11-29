@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, Platform, AlertController, Events } from '@ionic/angular';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { NavController, Platform, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-user-switch',
@@ -8,19 +7,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['./user-switch.page.scss'],
 })
 export class UserSwitchPage implements OnInit {
-	public subscribe:any;
 
   constructor(
-  		public navCtrl: NavController,
-  		public platform: Platform,
-  		public alertCtrl: AlertController,
-  		public event: Events
-  	) 
-  {}
-	
-	ionWillEnter(){
-		this.subscribe = this.platform.backButton.subscribe(()=>{ navigator['app'].exitApp(); });
-	}
+    public navCtrl: NavController,
+    public platform: Platform,
+    public alertCtrl: AlertController
+    ) {}
 
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
@@ -37,7 +29,8 @@ export class UserSwitchPage implements OnInit {
         }, {
           text: 'Confirm',
           handler: () => {
-						navigator['app'].exitApp();
+            // tslint:disable-next-line: no-string-literal
+            navigator['app'].exitApp();
             console.log('Confirm');
           }
         }
@@ -46,7 +39,7 @@ export class UserSwitchPage implements OnInit {
 
     await alert.present();
   }
-  
+
   ngOnInit() {
   }
-}	
+}
