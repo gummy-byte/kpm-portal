@@ -27,6 +27,8 @@
     "@ionic/angular": "^4.1.0",
     "@types/papaparse": "^5.0.1",
     "cordova-android": "^8.0.0",
+    "cordova-plugin-exitapp": "^1.0.0",
+    "cordova-plugin-exitapp2": "^1.0.4",
     "cordova-plugin-inappbrowser": "^3.0.0",
     "core-js": "^2.5.4",
     "papaparse": "^5.1.0",
@@ -78,7 +80,8 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "kr.co.joycorp.cordova.exitapp": {}
     },
     "platforms": [
       "android"
