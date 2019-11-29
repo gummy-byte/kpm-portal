@@ -8,19 +8,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['./user-switch.page.scss'],
 })
 export class UserSwitchPage implements OnInit {
-	public subscribe:any;
 
   constructor(
   		public navCtrl: NavController,
   		public platform: Platform,
-  		public alertCtrl: AlertController,
-  		public event: Events
+  		public alertCtrl: AlertController
   	) 
   {}
-	
-	ionWillEnter(){
-		this.subscribe = this.platform.backButton.subscribe(()=>{ navigator['app'].exitApp(); });
-	}
 
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
@@ -46,7 +40,7 @@ export class UserSwitchPage implements OnInit {
 
     await alert.present();
   }
-  
+
   ngOnInit() {
   }
 }	
