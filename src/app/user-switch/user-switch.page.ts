@@ -65,7 +65,9 @@ export class UserSwitchPage implements OnInit {
   ngOnInit() {
     this.storage.get('user').then((val) => {
       this.user = val
-      if (this.user.type == 'student' || this.user.type == 'staff') {
+      if (this.user == null || this.user.type == null) {
+        console.log('not logged in')
+      } else if (this.user.type == 'student' || this.user.type == 'staff') {
         this.router.navigate(['/profile']);
       }
       this.finishLoad = true
