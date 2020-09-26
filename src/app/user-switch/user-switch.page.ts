@@ -8,6 +8,8 @@ import { NavController, Platform, AlertController } from '@ionic/angular';
 })
 export class UserSwitchPage implements OnInit {
 
+  subscription: any;
+
   constructor(
     public navCtrl: NavController,
     public platform: Platform,
@@ -38,6 +40,18 @@ export class UserSwitchPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  ionViewWillEnter()
+  {
+      this.subscription=this.platform.backButton.subscribe(_=>{
+          this.presentAlertConfirm();
+      })
+  }
+
+  ionViewWillLeave()
+  {
+      this.subscription.unsubscribe();
   }
 
   ngOnInit() {
