@@ -42,8 +42,8 @@
                 "input": "src/app/app.scss"
               }
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "es5BrowserSupport": true,
+            "scripts": []
           },
           "configurations": {
             "production": {
