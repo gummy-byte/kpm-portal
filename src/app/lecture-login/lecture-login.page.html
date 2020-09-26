@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>
+      Log Masuk
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="dark-grey">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <img class="mb-5 login-logo" src="../assets/img/logo.png"/>
+            <h3 color="white">Selamat Datang<br>Sila Log Masuk</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label position="floating" text-center>No. Slip Gaji</ion-label>
+              <ion-input name="matric_number" type="text" [(ngModel)]="user.slip_gaji" required text-center></ion-input>
+            </ion-item>
+            <small>Contoh: 123456</small>
+            <small>Petunjuk: Masukkan No Kad Pengenalan tanpa '-'</small>
+            <p class="error-message" *ngIf="error.exist == true" text-center>{{error.message}}</p>
+          </div>
+          <div padding>
+            <ion-button class="login-button" size="large" type="button" (click)="validateForm()" expand="block">Log Masuk</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

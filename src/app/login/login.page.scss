@@ -1,0 +1,23 @@
+.login-logo{
+  width: 50vw;
+}
+
+ion-content{
+	--ion-background-color: #92d0f3;
+}
+
+ion-toolbar{
+	--ion-background-color: #92d0f3;
+}
+
+.login-button{
+  border-radius: 25px;
+}
+
+.error-message{
+  color: red;
+}
+
+.item-has-focus.label-floating.sc-ion-label-md-h, .item-has-focus .label-floating.sc-ion-label-md-h, .item-has-placeholder.label-floating.sc-ion-label-md-h, .item-has-placeholder .label-floating.sc-ion-label-md-h, .item-has-value.label-floating.sc-ion-label-md-h, .item-has-value .label-floating.sc-ion-label-md-h{
+  transform: translate3d(10%,50%,0) scale(.75) !important;
+}

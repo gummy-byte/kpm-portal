@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, Platform, AlertController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-switch',
@@ -13,8 +15,12 @@ export class UserSwitchPage implements OnInit {
   constructor(
     public navCtrl: NavController,
     public platform: Platform,
-    public alertCtrl: AlertController
-    ) {}
+    public alertCtrl: AlertController,
+    public storage: Storage,
+    public router: Router
+    ) {
+      
+    }
 
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
@@ -41,19 +47,28 @@ export class UserSwitchPage implements OnInit {
 
     await alert.present();
   }
+  user = {
+    type: null
+  }
+  finishLoad = false
 
-  ionViewWillEnter()
-  {
-      this.subscription=this.platform.backButton.subscribe(_=>{
-          this.presentAlertConfirm();
-      })
+  ionViewWillEnter() {
+    this.subscription=this.platform.backButton.subscribe(_=>{
+      this.presentAlertConfirm();
+    })
   }
 
-  ionViewWillLeave()
-  {
-      this.subscription.unsubscribe();
+  ionViewWillLeave(){
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {
+    this.storage.get('user').then((val) => {
+      this.user = val
+      if (this.user.type == 'student' || this.user.type == 'staff') {
+        this.router.navigate(['/profile']);
+      }
+      this.finishLoad = true
+    })
   }
 }

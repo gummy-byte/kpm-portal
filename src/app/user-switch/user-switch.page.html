@@ -8,10 +8,10 @@
 
 <ion-content class="dark-grey">
   <div class="ion-padding">
-  	<ion-grid>
+  	<ion-grid *ngIf="finishLoad == true">
 	    <ion-row>
 	    	<ion-col size="6">
-	    		<ion-card class="card-border" color="primary" text-center routerLink="/staff-home" routerDirection="forward">
+	    		<ion-card class="card-border" color="primary" text-center routerLink="/lecture-login" routerDirection="forward">
 	    			<ion-card-header class="card-header">
 					    <ion-card-title class="fsr-3">
 					    	<img class="mb-5" src="../assets/img/teacher.png"/>					    	
@@ -23,7 +23,7 @@
 				</ion-card>
 	    	</ion-col>
 	    	<ion-col size="6">
-	    		<ion-card class="card-border" color="success" text-center routerLink="/student-home" routerDirection="forward">
+	    		<ion-card class="card-border" color="success" text-center routerLink="/login" routerDirection="forward">
 	    			<ion-card-header class="card-header">
 					    <ion-card-title class="fsr-3">
 					    	<img class="mb-5" src="../assets/img/student.png"/>					    	
@@ -38,6 +38,10 @@
 	    <ion-row text-center>
 			<ion-button (click)="presentAlertConfirm()" class="exit-button" color="danger">Exit</ion-button>
 	    </ion-row>
-  	</ion-grid>
+		</ion-grid>
+		<ion-grid *ngIf="finishLoad == false" text-center>
+			<ion-spinner name="crescent"></ion-spinner>
+			<p>Memuat Turun Kejutan</p>
+		</ion-grid>
   </div>
 </ion-content>

@@ -4,3 +4,30 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+
+.mx-auto{
+  margin: auto 0;
+}
+.m-auto{
+  margin: auto;
+}
+.my-auto{
+  margin: 0 auto;
+}
+.mt-1{
+  margin-top: 1em;
+}
+.mb-1{
+  margin-bottom: 1em;
+}
+ion-content{
+	--ion-background-color: #92d0f3;
+}
+
+ion-toolbar{
+	--ion-background-color: #92d0f3;
+}
+
+.d-inline{
+  display: inline;
+}

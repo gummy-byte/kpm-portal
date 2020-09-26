@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center >
+      Profil Anda
+      <ion-icon name="apps" class="menu-icon" (click)="navigateHome()"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dark-grey">
+  <div class="ion-padding">
+    <ion-grid *ngIf="finishLoad == true">
+      <ion-avatar class="avatar-img">
+        <img src="../assets/img/user.png" alt="" text-center>
+      </ion-avatar>
+      <ion-item>
+        <ion-label>Nama</ion-label>
+        <p *ngIf="user.name != null">{{ user.name }}</p>
+        <p *ngIf="user.name == null">Tidak Ditetapkan</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>No. Telefon</ion-label>
+        <p *ngIf="user.phone != null">{{ user.phone }}</p>
+        <p *ngIf="user.phone == null">Tidak Ditetapkan</p>
+      </ion-item>
+      <div *ngIf="user.type == 'student'">
+        <ion-item>
+          <ion-label>No. Matrik</ion-label>
+          <p *ngIf="user.matric_number != null">{{ user.matric_number }}</p>
+          <p *ngIf="user.matric_number == null">Tidak Ditetapkan</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>Kursus</ion-label>
+          <p *ngIf="user.course != null">{{ user.course }}</p>
+          <p *ngIf="user.course == null">Tidak Ditetapkan</p>
+        </ion-item>
+      </div>
+      <div *ngIf="user.type == 'staff'">
+        <ion-item>
+          <ion-label>Jabatan</ion-label>
+          <p *ngIf="user.department != null">{{ user.department }}</p>
+          <p *ngIf="user.department == null">Tidak Ditetapkan</p>
+        </ion-item>
+      </div>
+      <div text-center class="mt-1">
+        <ion-button color="warning" shape="round" class="mx-auto" routerLink="/update-profile" routerDirection="forward">Sunting</ion-button>
+      </div>
+    </ion-grid>
+    <ion-grid *ngIf="finishLoad == false" text-center>
+			<ion-spinner name="crescent"></ion-spinner>
+			<p>Memuat Turun Kejutan</p>
+		</ion-grid>
+  </div>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+	  <ion-back-button slot="start" color="light" text ></ion-back-button>
+    <ion-title text-center>Sunting Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-grid>
+      <ion-item>
+        <ion-label>Nama</ion-label>
+        <ion-input placeholder="Ali b Abu" [(ngModel)]="user.name" text-right></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>No. Telefon</ion-label>
+        <ion-input placeholder="01234567" [(ngModel)]="user.phone" text-right></ion-input>
+      </ion-item>
+      <div *ngIf="user.type == 'student'">
+        <ion-item>
+          <ion-label>No. Matrik</ion-label>
+          <p text-right>{{user.matric_number}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>Kursus</ion-label>
+          <ion-input placeholder="Diploma In Computer Science" [(ngModel)]="user.course" text-right></ion-input>
+        </ion-item>
+      </div>
+      <div *ngIf="user.type == 'staff'">
+        <ion-item>
+          <ion-label>Jabatan</ion-label>
+          <ion-input placeholder="Jabatan Sains" [(ngModel)]="user.department" text-right></ion-input>
+        </ion-item>
+      </div>
+      <div text-center class="mt-1">
+        <ion-button color="success" shape="round" class="mx-auto" (click)="updateProfile()">Kemas Kini</ion-button>
+      </div>
+    </ion-grid>
+  </div>
+</ion-content>
